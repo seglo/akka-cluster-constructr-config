@@ -2,6 +2,7 @@ import com.typesafe.sbt.SbtMultiJvm
 import com.typesafe.sbt.SbtMultiJvm.MultiJvmKeys.MultiJvm
 
 val akkaVersion = "2.4.4"
+val constructrVersion = "0.13.2"
 
 val project = Project(
     id = "akka-sample-cluster-scala",
@@ -21,8 +22,8 @@ val project = Project(
       "com.typesafe.akka" %% "akka-cluster-metrics" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion,
       "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion,
-      "de.heikoseeberger" %% "constructr-akka" % "0.13.2",
-      "de.heikoseeberger" %% "constructr-coordination-etcd" % "0.13.2",
+      "de.heikoseeberger" %% "constructr-akka" % constructrVersion,
+      "de.heikoseeberger" %% "constructr-coordination-etcd" % constructrVersion,
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
       "io.kamon" % "sigar-loader" % "1.6.6-rev002"),
     javaOptions in run ++= Seq(
