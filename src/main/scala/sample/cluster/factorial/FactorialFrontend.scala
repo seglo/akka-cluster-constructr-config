@@ -46,7 +46,8 @@ class FactorialFrontend(upToN: Int, repeat: Boolean) extends Actor with ActorLog
 
 object FactorialFrontend {
   def main(args: Array[String]): Unit = {
-    val upToN = 200
+    val upToN = 5
+    val repeat = false
 
     val config = ConfigFactory.parseString("akka.cluster.roles = [frontend]").
       withFallback(ConfigFactory.load("factorial"))
@@ -55,7 +56,7 @@ object FactorialFrontend {
     system.log.info("Factorials will start when 2 backend members in the cluster.")
     //#registerOnUp
     Cluster(system) registerOnMemberUp {
-      system.actorOf(Props(classOf[FactorialFrontend], upToN, true),
+      system.actorOf(Props(classOf[FactorialFrontend], upToN, repeat),
         name = "factorialFrontend")
     }
     //#registerOnUp

@@ -20,6 +20,7 @@ class FactorialBackend extends Actor with ActorLogging {
   }
 
   def factorial(n: Int): BigInt = {
+    log.info("Beginning factorial on {}", n)
     @tailrec def factorialAcc(acc: BigInt, n: Int): BigInt = {
       if (n <= 1) acc
       else factorialAcc(acc * n, n - 1)

@@ -21,6 +21,8 @@ val project = Project(
       "com.typesafe.akka" %% "akka-cluster-metrics" % akkaVersion,
       "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion,
       "com.typesafe.akka" %% "akka-multi-node-testkit" % akkaVersion,
+      "de.heikoseeberger" %% "constructr-akka" % "0.13.2",
+      "de.heikoseeberger" %% "constructr-coordination-etcd" % "0.13.2",
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
       "io.kamon" % "sigar-loader" % "1.6.6-rev002"),
     javaOptions in run ++= Seq(
